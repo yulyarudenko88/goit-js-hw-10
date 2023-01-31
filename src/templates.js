@@ -22,7 +22,9 @@ export function makeCountryCard({
     <h2 class = "country__title">Country: ${name.official}</h2>
     <p class = "country__text"><span class = "country__subtitle">Capital:</span> ${capital}</p>
     <p class="country__text"><span class = "country__subtitle">Population:</span> ${population}</p>
-    <p class="country__text"><span class = "country__subtitle">Languages:</span> ${Object.values(languages)}</p>
+    <p class="country__text"><span class = "country__subtitle">Languages:</span> ${Object.values(
+      languages
+    ).join(', ')}</p>
   </div>
  `;
 }
