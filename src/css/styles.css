@@ -10,6 +10,12 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 #search-box {
@@ -17,4 +23,62 @@ body {
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+}
+
+.country-list {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;}
+
+.country-item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.country-list__flags {
+  display: block;
+  margin-right: 20px;
+}
+
+.country-list__title {
+  margin: 0;
+}
+
+.country-item,
+.country {
+  background-color: #f5f4fa;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  padding: 15px;
+}
+
+.country {
+  margin-left: auto;
+  margin-right: auto;
+  width: 270px;
+}
+
+.country__flag {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  text-align: left;
+}
+
+.country__title {
+  text-align: center;
+} 
+
+.country-list__title,
+.country__subtitle {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.country__text {
+  font-size: 14px;
 }
