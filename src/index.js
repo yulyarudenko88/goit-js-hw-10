@@ -17,24 +17,22 @@ ref.input.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 function onSearch(e) {
   e.preventDefault();
 
-  let countryName = ref.input.value;
+  let countryName = ref.input.value.trim();
   // console.log(countryName);
 
-  if (countryName.trim() === '') {
-    ref.countryList.innerHTML = '';
-    ref.countryCard.innerHTML = '';
+  if (countryName === '') {
+    clearAll()
     return;
   }
 
-  fetchCountries(countryName.trim())
+  fetchCountries(countryName)
     .then(countries => {
       // console.log(countries);
       if (countries.length > 10) {
         Notify.info(
           'Too many matches found. Please enter a more specific name.'
         );
-        ref.countryList.innerHTML = '';
-        ref.countryCard.innerHTML = '';
+        clearAll()
         return;
       }
 
@@ -57,7 +55,11 @@ function onSearch(e) {
     })
     .catch(error => {
       Notify.failure('Oops, there is no country with that name');
-      ref.countryList.innerHTML = '';
-      ref.countryCard.innerHTML = '';
+      clearAll()
     });
+}
+
+function clearAll() {
+  ref.countryList.innerHTML = '';
+  ref.countryCard.innerHTML = '';
 }
